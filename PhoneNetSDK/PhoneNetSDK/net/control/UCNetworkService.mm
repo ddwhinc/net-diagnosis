@@ -17,14 +17,17 @@
 
 @implementation UCNetworkService
 
-+ (void)uHttpGetRequestWithUrl:(NSString *)urlstr functionModule:(NSString *)module  timeout:(NSTimeInterval)timeValue completionHandler:(UNetHttpResponseHandler)handler
++ (void)uHttpGetRequestWithUrl:(NSString *)urlstr 
+                functionModule:(NSString *)moduleName
+                       timeout:(NSTimeInterval)timeValue
+             completionHandler:(UNetHttpResponseHandler)handler
 {
     if (urlstr == NULL || urlstr.length == 0) {
-        log4cplus_warn("PhoneNetSDK", "%s module , request url is null..\n",[module UTF8String]);
+        log4cplus_warn("PhoneNetSDK", "%s module , request url is null..\n",[moduleName UTF8String]);
         return;
     }
     
-    log4cplus_debug("PhoneNetSDK", "%s module , request url: %s \n",[module UTF8String],[urlstr UTF8String]);
+    log4cplus_debug("PhoneNetSDK", "%s module , request url: %s \n",[moduleName UTF8String],[urlstr UTF8String]);
     NSURL *url = [NSURL URLWithString:urlstr];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
     [request setHTTPMethod:@"GET"];
@@ -34,7 +37,7 @@
     NSURLSessionTask *sessionTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         NSHTTPURLResponse *httpUrlResponse = (NSHTTPURLResponse *)response;
         if (data == nil || error) {
-            log4cplus_warn("PhoneNetSDK", "%s module , http request error , response code :%ld\n",[module UTF8String],(long)httpUrlResponse.statusCode);
+            log4cplus_warn("PhoneNetSDK", "%s module , http request error , response code :%ld\n",[moduleName UTF8String],(long)httpUrlResponse.statusCode);
         }else{
             handler(data,error);
         }

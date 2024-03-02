@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PNTcpPingResult : NSObject
-@property (readonly) NSString *ip;
+@property (readonly) NSString * _Nullable ip;
 @property (readonly) NSUInteger loss;
 @property (readonly) NSUInteger count;  
 @property (readonly) NSTimeInterval max_time;
@@ -18,7 +18,7 @@
 
 @end
 
-typedef void (^PNTcpPingHandler)(NSMutableString *);
+typedef void (^PNTcpPingHandler)(NSMutableString *_Nonnull);
 
 @interface PNTcpPing : NSObject
 
@@ -32,7 +32,7 @@ typedef void (^PNTcpPingHandler)(NSMutableString *);
  @param complete tcp ping callback
  @return `PNTcpPing` instance
  */
-+ (instancetype)start:(NSString * _Nonnull)host
++ (instancetype _Nonnull )start:(NSString * _Nonnull)host
              complete:(PNTcpPingHandler _Nonnull)complete;
 
 
@@ -45,7 +45,7 @@ typedef void (^PNTcpPingHandler)(NSMutableString *);
  @param complete tcp ping callback
  @return `PNTcpPing` instance
  */
-+ (instancetype)start:(NSString * _Nonnull)host
++ (instancetype _Nonnull )start:(NSString * _Nonnull)host
                  port:(NSUInteger)port
                 count:(NSUInteger)count
              complete:(PNTcpPingHandler _Nonnull)complete;

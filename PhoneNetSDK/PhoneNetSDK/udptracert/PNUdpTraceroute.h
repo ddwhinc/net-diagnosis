@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^PNUdpTracerouteHandler)(NSMutableString *);
+typedef void (^PNUdpTracerouteHandler)(NSMutableString *_Nonnull);
 
 
 @interface PNUdpTraceroute : NSObject
@@ -22,7 +22,7 @@ typedef void (^PNUdpTracerouteHandler)(NSMutableString *);
  @param complete udp traceroute result callback
  @return a `PNUdpTraceroute` instance.
  */
-+ (instancetype)start:(NSString * _Nonnull)host
++ (instancetype _Nonnull )start:(NSString * _Nonnull)host
              complete:(PNUdpTracerouteHandler _Nonnull)complete;
 
 
@@ -36,7 +36,7 @@ typedef void (^PNUdpTracerouteHandler)(NSMutableString *);
  @param complete udp traceroute result callback
  @return a `PNUdpTraceroute` instance.
  */
-+ (instancetype)start:(NSString * _Nonnull)host
++ (instancetype _Nonnull )start:(NSString * _Nonnull)host
                maxTtl:(NSUInteger)maxTtl
              complete:(PNUdpTracerouteHandler _Nonnull)complete;
 

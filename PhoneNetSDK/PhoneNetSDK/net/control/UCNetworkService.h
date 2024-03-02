@@ -22,5 +22,8 @@ typedef  void(^UNetHttpResponseHandler) (NSData *_Nullable data, NSError *_Nulla
 
 @interface UCNetworkService : NSObject
 
-+ (void)uHttpGetRequestWithUrl:(NSString *)urlstr functionModule:(NSString *)module  timeout:(NSTimeInterval)timeValue completionHandler:(UNetHttpResponseHandler)handler;
++ (void)uHttpGetRequestWithUrl:(NSString * _Nullable)urlstr 
+                functionModule:(NSString *_Nonnull)moduleName
+                       timeout:(NSTimeInterval)timeValue
+             completionHandler:(UNetHttpResponseHandler _Nullable )handler;
 @end

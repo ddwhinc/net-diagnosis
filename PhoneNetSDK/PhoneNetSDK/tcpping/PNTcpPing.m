@@ -162,7 +162,7 @@ void tcp_conn_handler()
         _isStop = YES;
     }
     
-    dispatch_async(dispatch_get_main_queue(), ^(void) {
+    dispatch_async(dispatch_get_main_queue(), ^() {
         
         if (self.isSucc) {
             PNTcpPingResult *pingRes  = [self constPingRes:code ip:ip durations:intervals loss:loss count:index];
