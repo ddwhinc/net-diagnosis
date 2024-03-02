@@ -10,7 +10,8 @@
 
 @implementation PNetTools
 
-//
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wunknown-escape-sequence"
 + (BOOL)validDomain:(NSString *)domain
 {
     BOOL result = NO;
@@ -19,7 +20,7 @@
     result = [pred evaluateWithObject:domain];
     return result;
 }
-
+#pragma clang diagnostic pop
 
 + (NSInteger)currentTimestamp
 {

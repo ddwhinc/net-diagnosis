@@ -56,13 +56,16 @@
 
 
 static PNTcpPing *g_tcpPing = nil;
+
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wstrict-prototypes"
 void tcp_conn_handler()
 {
     if (g_tcpPing) {
         [g_tcpPing processLongConn];
     }
 }
-
+#pragma clang diagnostic pop
 
 @interface PNTcpPing()
 {
