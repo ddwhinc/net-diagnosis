@@ -17,7 +17,6 @@
 @optional
 - (void)pingResultWithUCPing:(PhonePing *)ucPing pingResult:(PPingResModel *)pingRes pingStatus:(PhoneNetPingStatus)status;
 
-
 @end
 
 @interface PhonePing : NSObject
@@ -25,7 +24,7 @@
 @property (nonatomic,strong) id<PhonePingDelegate> delegate;
 
 - (void)startPingHosts:(NSString *)host packetCount:(int)count;
-
 - (void)stopPing;
 - (BOOL)isPing;
+
 @end

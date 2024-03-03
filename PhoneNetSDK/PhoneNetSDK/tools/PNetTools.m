@@ -27,4 +27,5 @@
     NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
     return (NSInteger)currentTime;
 }
+
 @end

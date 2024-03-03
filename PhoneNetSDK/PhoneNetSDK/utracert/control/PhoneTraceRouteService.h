@@ -15,7 +15,6 @@
 
 + (instancetype)shareInstance;
 
-
 /*!
  @discussion
  Start traceroute a set of host addresses
@@ -24,7 +23,7 @@
  @param handler traceroute results
  */
 - (void)startTracerouteHost:(NSString *)host resultHandler:(NetTracerouteResultHandler)handler;
-
 - (void)uStopTracert;
 - (BOOL)uIsTracert;
+
 @end

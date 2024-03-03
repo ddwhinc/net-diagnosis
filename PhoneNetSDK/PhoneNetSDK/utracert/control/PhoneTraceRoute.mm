@@ -28,6 +28,7 @@ typedef enum PNetRecTracertIcmpType{
 @property (nonatomic,assign) BOOL isStopTracert;
 @property (nonatomic,assign) PNetRecTracertIcmpType lastRecTracertIcmpType;
 @property (nonatomic,strong) NSDate  *sendDate;
+
 @end
 
 @implementation PhoneTraceRoute
@@ -209,4 +210,5 @@ typedef enum PNetRecTracertIcmpType{
     }
     return res;
 }
+
 @end

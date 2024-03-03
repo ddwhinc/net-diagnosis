@@ -9,29 +9,22 @@
 #import "PhoneTraceRouteService.h"
 
 @interface PhoneTraceRouteService()<PhoneTraceRouteDelegate>
+
 @property (nonatomic,strong) PhoneTraceRoute *ucTraceroute;
 @property (nonatomic,copy,readonly) NetTracerouteResultHandler tracertResultHandler;
+
 @end
 
 @implementation PhoneTraceRouteService
 
-static PhoneTraceRouteService *ucTraceRouteService_instance = NULL;
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
-
 + (instancetype)shareInstance
 {
-    if (ucTraceRouteService_instance == NULL) {
-        ucTraceRouteService_instance = [[PhoneTraceRouteService alloc] init];
-    }
-    return ucTraceRouteService_instance;
+  static PhoneTraceRouteService *instance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    instance = [[PhoneTraceRouteService alloc] init];
+  });
+  return instance;
 }
 
 - (void)uStopTracert

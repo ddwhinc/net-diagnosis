@@ -24,6 +24,6 @@ typedef enum Enum_Traceroute_Status
 @property (nonatomic,copy) NSString *dstIp;
 
 
-- (instancetype)init:(NSInteger)hop
-               count:(NSInteger)count;
+- (instancetype)init:(NSInteger)hop count:(NSInteger)count;
+
 @end

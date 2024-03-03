@@ -11,6 +11,7 @@
 #import "PhoneNetDiagnosisHelper.h"
 
 NS_ASSUME_NONNULL_BEGIN
+
 @class PNSamplePing;
 @protocol PNSamplePingDelegate <NSObject>
 
@@ -23,15 +24,14 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 
-
 @interface PNSamplePing : NSObject
 
 @property (nonatomic,weak) id<PNSamplePingDelegate> delegate;
 
 - (void)startPingIp:(NSString *)ip packetCount:(int)count;
-
 - (void)stopPing;
 - (BOOL)isPing;
+
 @end
 
 NS_ASSUME_NONNULL_END

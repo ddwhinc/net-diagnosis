@@ -17,7 +17,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic,readonly) NSError *error;
 
-
 /**
  @brief 构造错误(参数错误，内部使用)
  
@@ -49,18 +48,22 @@ NS_ASSUME_NONNULL_BEGIN
  @return 错误实例
  */
 + (instancetype)errorWithError:(NSError *)error;
+
 @end
 
 
 @interface DomainLookUpRes : NSObject
+
 @property (nonatomic,copy) NSString * name;
 @property (nonatomic,copy) NSString * ip;
 
 + (instancetype)instanceWithName:(NSString *)name address:(NSString *)address;
+
 @end
 
 
 @interface PDeviceNetInfo : NSObject
+
 @property (nonatomic,readonly) NSString *netType;
 @property (nonatomic,readonly) NSString *wifiSSID;
 @property (nonatomic,readonly) NSString *wifiBSSID;
@@ -70,10 +73,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic,readonly) NSString *cellIPV4;
 
 + (instancetype)deviceNetInfo;
+
 @end
 
 
 @interface PIpInfoModel : NSObject
+
 @property (nonatomic,readonly) NSString *ip;
 @property (nonatomic,readonly) NSString *city;
 @property (nonatomic,readonly) NSString *region;
@@ -83,11 +88,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (instancetype)uIpInfoModelWithDict:(NSDictionary *)dict;
 - (NSDictionary *)objConvertToDict;
+
 @end
 
 @interface NetWorkInfo : NSObject
+
 @property (nonatomic,strong) PDeviceNetInfo *deviceNetInfo;
 @property (nonatomic,strong) PIpInfoModel   *ipInfoModel;
+
 @end
 
 

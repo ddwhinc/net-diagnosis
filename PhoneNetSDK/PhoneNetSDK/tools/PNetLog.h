@@ -12,7 +12,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PNetLog : NSObject
+
 + (void)setSDKLogLevel:(PhoneNetSDKLogLevel)logLevel;
+
 @end
 
 NS_ASSUME_NONNULL_END

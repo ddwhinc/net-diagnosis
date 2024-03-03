@@ -21,21 +21,22 @@
 
 
 @interface PhoneNetManager()
+
 @property (nonatomic,strong) PIpInfoModel *devicePublicIpInfo;
 @property (nonatomic,strong) PNetReachability *reachability;
+
 @end
 
 @implementation PhoneNetManager
 
-static PhoneNetManager *sdkManager_instance = nil;
-
 + (instancetype)shareInstance
 {
-    static dispatch_once_t pNetNetAnalysis_onceToken;
-    dispatch_once(&pNetNetAnalysis_onceToken, ^{
-        sdkManager_instance = [[super allocWithZone:NULL] init];
+  static PhoneNetManager *instance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+      instance = [[PhoneNetManager alloc] init];
     });
-    return sdkManager_instance;
+    return instance;
 }
 
 - (void)settingSDKLogLevel:(PhoneNetSDKLogLevel)logLevel

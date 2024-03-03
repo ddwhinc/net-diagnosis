@@ -27,6 +27,7 @@
 #define  kUdpTracertMaxTTL                        30   // Max 30 hops（最多30跳）
 
 @interface PNUdpTracerouteDetail:NSObject
+
 @property (readonly) NSUInteger seq;   // 第几跳
 @property (nonatomic,copy) NSString * routeIp;  // 中间路由ip
 @property (nonatomic) NSTimeInterval *durations;   // 存储时间

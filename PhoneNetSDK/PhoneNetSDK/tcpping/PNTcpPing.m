@@ -78,8 +78,8 @@ void tcp_conn_handler()
 @property (copy,readonly) PNTcpPingHandler complete;
 @property (atomic) BOOL isStop;
 @property (nonatomic,assign) BOOL isSucc;
-
 @property (nonatomic,copy) NSMutableString *pingDetails;
+
 @end
 
 @implementation PNTcpPing
@@ -265,4 +265,5 @@ void tcp_conn_handler()
     NSTimeInterval avg = sum/count;
     return [[PNTcpPingResult alloc] init:ip loss:loss count:count max:max min:min avg:avg];
 }
+
 @end

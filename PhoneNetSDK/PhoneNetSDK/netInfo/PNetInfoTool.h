@@ -10,8 +10,8 @@
 
 @interface PNetInfoTool : NSObject
 
-
 + (instancetype)shareInstance;
+
 - (void)refreshNetInfo;
 
 #pragma mark - for wifi
@@ -22,6 +22,5 @@
 - (NSString *)pGetSubNetMask;
 - (NSString *)pGetWifiIpv6;
 - (NSString *)pGetCellIpv4;
-
 
 @end

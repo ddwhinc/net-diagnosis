@@ -9,6 +9,7 @@
 #import "PNetQueue.h"
 
 @interface PNetQueue()
+
 + (instancetype)shareInstance;
 
 @property (nonatomic) dispatch_queue_t pingQueue;
@@ -69,4 +70,5 @@
         block();
     });
 }
+
 @end

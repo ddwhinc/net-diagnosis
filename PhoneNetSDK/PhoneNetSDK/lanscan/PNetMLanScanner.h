@@ -23,7 +23,6 @@ NS_ASSUME_NONNULL_BEGIN
  */
 - (void) scanMLan:(PNetMLanScanner *)scanner activeIp:(NSString *)ip;
 
-
 /**
  @brief Show the percentage of scan progress, which is a decimal of 0-1
 
@@ -45,7 +44,6 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic,weak) id<PNetMLanScannerDelegate> delegate;
 
-
 /**
  @brief Get a `PNetMLanScanner` instance
 
@@ -53,18 +51,15 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (instancetype)shareInstance;
 
-
 /**
  @brief Start scanning ip in the LAN
  */
 - (void)scan;
 
-
 /**
  @brief Stop lan scanning
  */
 - (void)stop;
-
 
 /**
  @brief Get the status of the current LAN ip scan

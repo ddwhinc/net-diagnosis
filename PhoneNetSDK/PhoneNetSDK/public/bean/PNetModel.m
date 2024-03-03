@@ -9,7 +9,6 @@
 #import "PNetModel.h"
 #import "PNetInfoTool.h"
 
-
 static  NSString *domain = @"mediaios.sdk";
 static const int KPNInvalidArguments = -2;
 static const int KPNInvalidElements  = -3;

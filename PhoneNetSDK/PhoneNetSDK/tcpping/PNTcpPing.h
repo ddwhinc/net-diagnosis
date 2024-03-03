@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface PNTcpPingResult : NSObject
+
 @property (readonly) NSString * _Nullable ip;
 @property (readonly) NSUInteger loss;
 @property (readonly) NSUInteger count;  

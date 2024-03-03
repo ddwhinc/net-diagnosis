@@ -12,8 +12,11 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PNDomainLookup : NSObject
+
 + (instancetype)shareInstance;
+
 - (void)lookupDomain:(NSString * _Nonnull)domain completeHandler:(NetLookupResultHandler _Nonnull)handler;
+
 @end
 
 NS_ASSUME_NONNULL_END

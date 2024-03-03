@@ -13,9 +13,10 @@
 #import "PhoneNetManager.h"
 
 @interface PhonePingService : NSObject
-+ (instancetype)shareInstance;
-- (void)startPingHost:(NSString *)host packetCount:(int)count resultHandler:(NetPingResultHandler)handler;
 
++ (instancetype)shareInstance;
+
+- (void)startPingHost:(NSString *)host packetCount:(int)count resultHandler:(NetPingResultHandler)handler;
 - (void)uStopPing;
 - (BOOL)uIsPing;
 

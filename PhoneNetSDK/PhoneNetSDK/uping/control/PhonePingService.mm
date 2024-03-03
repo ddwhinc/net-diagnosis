@@ -12,6 +12,7 @@
 
 
 @interface PhonePingService()<PhonePingDelegate>
+
 @property (nonatomic,strong) PhonePing *uPing;
 @property (nonatomic,strong) NSMutableDictionary *pingResDic;
 @property (nonatomic,copy,readonly) NetPingResultHandler pingResultHandler;
@@ -19,17 +20,6 @@
 @end
 
 @implementation PhonePingService
-
-static PhonePingService *ucPingservice_instance = NULL;
-
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
-}
 
 - (NSMutableDictionary *)pingResDic
 {
@@ -41,10 +31,12 @@ static PhonePingService *ucPingservice_instance = NULL;
 
 + (instancetype)shareInstance
 {
-    if (ucPingservice_instance == NULL) {
-        ucPingservice_instance = [[PhonePingService alloc] init];
-    }
-    return ucPingservice_instance;
+  static PhonePingService *instance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    instance = [[PhonePingService alloc] init];
+  });
+  return instance;
 }
 
 - (void)uStopPing

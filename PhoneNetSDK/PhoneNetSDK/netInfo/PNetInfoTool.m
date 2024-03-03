@@ -37,22 +37,23 @@ static NSString * const U_HRPD         = @"HRPD";
 static NSString * const U_4G           = @"4G";
 
 @interface PNetInfoTool()
+
 @property (nonatomic,copy) NSDictionary *ipInfoDict;
 @property (nonatomic,copy) NSDictionary *wifiDict;
+
 @end
 
 
 @implementation PNetInfoTool
 
-
-static PNetInfoTool *pNetInfoTool_instance = NULL;
-
 + (instancetype)shareInstance
 {
-    if (pNetInfoTool_instance == NULL) {
-        pNetInfoTool_instance = [[PNetInfoTool alloc] init];
-    }
-    return pNetInfoTool_instance;
+  static PNetInfoTool *instance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    instance = [[PNetInfoTool alloc] init];
+  });
+  return instance;
 }
 
 - (void)refreshNetInfo

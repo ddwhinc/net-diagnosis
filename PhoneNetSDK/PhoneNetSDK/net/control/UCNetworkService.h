@@ -25,5 +25,5 @@ typedef  void(^UNetHttpResponseHandler) (NSData *_Nullable data, NSError *_Nulla
 + (void)uHttpGetRequestWithUrl:(NSString * _Nullable)urlstr 
                 functionModule:(NSString *_Nonnull)moduleName
                        timeout:(NSTimeInterval)timeValue
-             completionHandler:(UNetHttpResponseHandler _Nullable )handler;
+             completionHandler:(UNetHttpResponseHandler _Nonnull)handler;
 @end

@@ -11,14 +11,13 @@
 #include "log4cplus_pn.h"
 #import "PNetQueue.h"
 
-
 @interface PhonePing()
 {
     int socket_client;
     struct sockaddr_in remote_addr;
 }
-@property (nonatomic,assign) BOOL isPing;
 
+@property (nonatomic,assign) BOOL isPing;
 @property (nonatomic,assign) BOOL isStopPingThread;
 @property (nonatomic,strong) NSString *host;
 @property (nonatomic,strong) NSDate   *sendDate;
@@ -229,8 +228,6 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.delegate pingResultWithUCPing:self pingResult:pingResModel pingStatus:status];
     });
-    
 }
-
 
 @end

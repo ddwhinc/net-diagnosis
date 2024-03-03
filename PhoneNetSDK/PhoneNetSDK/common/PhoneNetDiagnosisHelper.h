@@ -22,7 +22,6 @@
 #define kPhoneNetPingPackets      5
 
 
-
 typedef struct PNetIPHeader {
     uint8_t versionAndHeaderLength;
     uint8_t differentiatedServices;
@@ -110,4 +109,5 @@ __Check_Compile_Time(offsetof(PICMPPacket_Tracert, seq) == 6);
 + (BOOL)isTimeoutPacket:(char *)packet len:(int)len;
 + (BOOL)isEchoReplayPacket:(char *)packet len:(int)len;
 + (PICMPPacket_Tracert *)constructTracertICMPPacketWithSeq:(uint16_t)seq andIdentifier:(uint16_t)identifier;
+
 @end

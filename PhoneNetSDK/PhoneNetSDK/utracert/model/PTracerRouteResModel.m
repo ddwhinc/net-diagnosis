@@ -9,8 +9,8 @@
 #import "PTracerRouteResModel.h"
 
 @implementation PTracerRouteResModel
-- (instancetype)init:(NSInteger)hop
-               count:(NSInteger)count {
+
+- (instancetype)init:(NSInteger)hop count:(NSInteger)count {
     if (self = [super init]) {
         _ip = nil;
         _hop = hop;
@@ -37,4 +37,5 @@
 - (void)dealloc {
     free(_durations);
 }
+
 @end

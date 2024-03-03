@@ -13,8 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @interface PNetTools : NSObject
 
 + (BOOL)validDomain:(NSString *)domain;
-
 + (NSInteger)currentTimestamp;
+
 @end
 
 NS_ASSUME_NONNULL_END

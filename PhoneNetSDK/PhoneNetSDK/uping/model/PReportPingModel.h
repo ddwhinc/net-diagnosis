@@ -17,10 +17,10 @@
 @property (nonatomic,copy)   NSString *src_ip;
 @property (nonatomic,copy)   NSString *dst_ip;
 
-
 - (instancetype)initWithDict:(NSDictionary *)dict;
 + (instancetype)uReporterPingmodelWithDict:(NSDictionary *)dict;
 - (NSDictionary *)objConvertToDict;
+
 @end
 
 

@@ -16,11 +16,13 @@
 #include "log4cplus_pn.h"
 
 @interface PNetMLanScanner()<PNSamplePingDelegate>
+
 @property (nonatomic,assign) int cursor;
 @property (nonatomic,copy) NSArray *ipList;
 @property (nonatomic,strong) NSMutableArray *activedIps;
 @property (nonatomic,strong) PNSamplePing *samplePing;
 @property (nonatomic,assign,getter=isStopLanScan) BOOL stopLanScan;
+
 @end
 
 @implementation PNetMLanScanner
@@ -57,14 +59,14 @@
     return self;
 }
 
-
-static PNetMLanScanner *lanScanner_instance = nil;
 + (instancetype)shareInstance
 {
-    if (!lanScanner_instance) {
-        lanScanner_instance = [[PNetMLanScanner alloc] init];
-    }
-    return lanScanner_instance;
+  static PNetMLanScanner *instance = nil;
+  static dispatch_once_t onceToken;
+  dispatch_once(&onceToken, ^{
+    instance = [[PNetMLanScanner alloc] init];
+  });
+  return instance;
 }
 
 - (void)scan
@@ -159,4 +161,5 @@ static PNetMLanScanner *lanScanner_instance = nil;
         }
     }
 }
+
 @end
