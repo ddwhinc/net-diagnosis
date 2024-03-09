@@ -57,16 +57,6 @@
     return PhoneNetSDKVersion;
 }
 
-+(id)allocWithZone:(struct _NSZone *)zone
-{
-    return [PhoneNetManager shareInstance];
-}
-
-- (id)copyWithZone:(struct _NSZone *)zone
-{
-    return [PhoneNetManager shareInstance];
-}
-
 - (void)netStopPing
 {
     [[PhonePingService shareInstance] uStopPing];
